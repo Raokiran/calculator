@@ -14,7 +14,7 @@ function val(value) {
       post = [];
       display(exp);
     } else if (value === "+/-") {
-      if (digitExpression.test(post[post.length - 1])) {
+      if (digitExpression.test(post[post.length - 1])&&!digitExpression.test(post[post.length - 2])) {
         let digit = post.pop();
         if (digit.startsWith("-")) {
           digit = digit.substring(1);
